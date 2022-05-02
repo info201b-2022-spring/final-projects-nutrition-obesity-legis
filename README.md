@@ -79,6 +79,7 @@ The data is provided by the CDC website for chronic disease prevention and healt
 **How many observations (rows) are in your data?**
 
 80.9k 
+
 **How many features (columns) are in the data?**
 
 33 
