@@ -1,6 +1,6 @@
 # final-projects-nutrition-obesity-legis
 **Members: Nghi, Ayman, Luke, Tyler**
-# Domain Interest
+# Domain Interest: Health
 
 ## Why are you interested in this field/domain? 
 
