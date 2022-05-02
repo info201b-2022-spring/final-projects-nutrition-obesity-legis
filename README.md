@@ -14,9 +14,15 @@ Our group wishes to analyze datasets about patterns in nutrition, physical activ
 
 * <https://www.cdc.gov/physicalactivity/data/inactivity-prevalence-maps/index.html#WhatCanBeDone> 
 
+* <https://chronicdata.cdc.gov/Nutrition-Physical-Activity-and-Obesity/Nutrition-Physical-Activity-and-Obesity-Behavioral/hn4x-zwk7> 
+
 ## What data-driven questions do you hope to answer about this domain (share at least 3)? 
 
-These datasets can help us analyze the physical activity and health patterns of US citizens during the pandemic and the use of technology at home. This can help us understand how we can raise awareness to mental and physical health in the world.  
+* What is the general state of American health related to physical activity/inactivity?
+
+* Is there examples of systems in place that have proven data to improve physical activity?
+
+* Is there any regional trends for where physical activity, nutrition, and obesity are better or worse?
 
 # Finding Data 
 
