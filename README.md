@@ -25,8 +25,8 @@ Our group wishes to analyze datasets about patterns in nutrition, physical activ
 * Is there any regional trends for where physical activity, nutrition, and obesity are better or worse?
 
 # Finding Data 
-
-## Where did you download the data (e.g., a web URL)? 
+# (CDC Nutrition and Physical Activity and Obesity Legislation data set)
+## Where did you download the data (e.g., a web URL)?
 
 <https://chronicdata.cdc.gov/Nutrition-Physical-Activity-and-Obesity/CDC-Nutrition-Physical-Activity-and-Obesity-Legisl/nxst-x9p4>  
 
@@ -44,4 +44,44 @@ This data is provided by the CDC website for nutrition, physical activity, and o
 
 ## What questions (from above) can be answered using the data in this dataset? 
 
-Questions that can be answered using the data are the state legislation on nutrition, physical activity, and obesity settings in such places of 50 US states.  
+Questions that can be answered using the data are the state legislation on nutrition, physical activity, and obesity settings in such places of 50 US states.
+
+## Where did you download the data (e.g., a web URL)? (1-self-reported.csv)
+
+<https://www.cdc.gov/physicalactivity/data/inactivity-prevalence-maps/index.html#WhatCanBeDone> 
+
+## How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about? 
+
+The data was generated from a survey by the Behavioral Risk Factor Surveillance System. The survey asked respondents if they had participated in any form of physical exercise other than their job in the past month. 
+
+## How many observations (rows) are in your data? 
+
+53 
+
+## How many features (columns) are in the data? 
+
+3 
+
+## What questions (from above) can be answered using the data in this dataset? 
+
+This can help with the regional trends to see if any specific states have more people responding yes to exercise or not. 
+
+## Where did you download the data (e.g., a web URL)? (Nutrition Physical Activity and Obesity Data Set)
+
+<https://chronicdata.cdc.gov/Nutrition-Physical-Activity-and-Obesity/Nutrition-Physical-Activity-and-Obesity-Behavioral/hn4x-zwk7>
+
+## How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about? 
+
+The data is provided by the CDC website for chronic disease prevention and health promotion, division of nutrition, physical activity, and obesity. It is collected by the Behavioral Risk Factor Surveillance System. The data is about adult diets, physical activity and weight status. 
+
+## How many observations (rows) are in your data? 
+
+80.9k 
+
+## How many features (columns) are in the data? 
+
+33 
+
+## What questions (from above) can be answered using the data in this dataset? 
+
+This can help answer about the general state of American obesity and physical wellness. 
