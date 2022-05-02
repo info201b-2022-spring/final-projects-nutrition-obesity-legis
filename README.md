@@ -47,7 +47,7 @@ This data is provided by the CDC website for nutrition, physical activity, and o
 Questions that can be answered using the data are the state legislation on nutrition, physical activity, and obesity settings in such places of 50 US states.
 
 ## Self Reported Data Set
-**Where did you download the data (e.g., a web URL)? **
+**Where did you download the data (e.g., a web URL)?**
 
 <https://www.cdc.gov/physicalactivity/data/inactivity-prevalence-maps/index.html#WhatCanBeDone> 
 
