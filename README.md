@@ -20,9 +20,9 @@ Our group wishes to analyze datasets about patterns in nutrition, physical activ
 
 * What is the general state of American health related to physical activity/inactivity?
 
-* Is there examples of systems in place that have proven data to improve physical activity?
+* Are there examples of systems in place that have proven data to improve physical activity?
 
-* Is there any regional trends for where physical activity, nutrition, and obesity are better or worse?
+* Are there any regional trends for where physical activity, nutrition, and obesity are better or worse?
 
 # Finding Data 
 ## CDC Nutrition and Physical Activity and Obesity Legislation data set
@@ -74,7 +74,7 @@ This can help with the regional trends to see if any specific states have more p
 
 **How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?**
 
-The data is provided by the CDC website for chronic disease prevention and health promotion, division of nutrition, physical activity, and obesity. It is collected by the Behavioral Risk Factor Surveillance System. The data is about adult diets, physical activity and weight status. 
+The data is provided by the CDC website for chronic disease prevention and health promotion, division of nutrition, physical activity, and obesity. It is collected by the Behavioral Risk Factor Surveillance System. The data addresses adult diets, physical activity and weight status. 
 
 **How many observations (rows) are in your data?**
 
