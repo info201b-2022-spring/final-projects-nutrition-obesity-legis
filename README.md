@@ -1,2 +1,2 @@
-# final-projects-ttr007
-final-projects-ttr007 created by GitHub Classroom
+# final-projects-nutrition-obesity-legis
+Members: Nghi, Ayman, Luke, Tyler
