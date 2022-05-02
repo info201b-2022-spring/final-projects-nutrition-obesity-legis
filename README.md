@@ -25,7 +25,7 @@ Our group wishes to analyze datasets about patterns in nutrition, physical activ
 * Is there any regional trends for where physical activity, nutrition, and obesity are better or worse?
 
 # Finding Data 
-## (CDC Nutrition and Physical Activity and Obesity Legislation data set)
+## CDC Nutrition and Physical Activity and Obesity Legislation data set
 **Where did you download the data (e.g., a web URL)?**
 
 <https://chronicdata.cdc.gov/Nutrition-Physical-Activity-and-Obesity/CDC-Nutrition-Physical-Activity-and-Obesity-Legisl/nxst-x9p4>  
