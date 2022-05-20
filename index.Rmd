@@ -14,12 +14,34 @@ Our group wishes to analyze  patterns in nutrition, physical activity, and obesi
 
 # Summary paragraph
 
-One value we chose to look at was the most common stratification group. This happened to be:    
-```{r summary_info, echo = FALSE, message = FALSE}
+The data set has questions pertaining to physical health, and tracks the percentage of people that fall into the question asked. The topic that was often under evaluation on this data set was:
+```{r summary_topic, echo = FALSE, message = FALSE}
 source("Summary_Information.r")
-summary_info$most_common_strategy 
+summary_info$most_common_physical_topic
 ```
-
+Another value of interest was the way the data was collected. Each observation had a column for how the data was gathered, but the only unique way that the data was gathered was by:
+```{r summary_gather, echo = FALSE, message = FALSE}
+source("Summary_Information.r")
+summary_info$datasource_types
+```
+The total number of studies collected by this data set was:
+```{r summary_studies, echo = FALSE, message = FALSE}
+source("Summary_Information.r")
+summary_info$num_studies
+```
+The most common stratification group targeted by questions was:
+```{r summary_stratification, echo = FALSE, message = FALSE}
+source("Summary_Information.r")
+summary_info$most_common_strategy
+```
+We were interested in the study that had the largest sample size, and the information on it was that:
+```{r summary_sample, echo = FALSE, message = FALSE}
+paste("Year:",summary_info$max_state_sample_size$YearEnd)
+paste("Location:", summary_info$max_state_sample_size$LocationDesc)
+paste("Topic:", summary_info$max_state_sample_size$Topic)
+paste("Question:", summary_info$max_state_sample_size$Question)
+paste("Sample_Size:",summary_info$max_state_sample_size$Sample_Size)
+```
 # Table of aggregated data
 
 ```{r table, echo=FALSE, message = FALSE}
