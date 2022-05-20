@@ -1,0 +1,41 @@
+---
+title: "Explatory Analysis"
+output: html_document
+date: '2022-05-20'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+Our group wishes to analyze  patterns in nutrition, physical activity, and obesity in the United States, in order to spread awareness of the decline in mental and physical health caused by the pandemic. Knowing that we are not alone affected by this, we can work together to regain the physical activity of our communities and ultimately push for better health across the world. This data set is provided by the CDC website for chronic disease prevention and health promotion, division of nutrition, physical activity, and obesity. It is collected by the Behavioral Risk Factor Surveillance System. The data addresses adult diets, physical activity and weight status.
+
+# Summary paragraph
+
+One value we chose to look at was the most common stratification group. This happened to be:    
+```{r summary_info, echo = FALSE, message = FALSE}
+source("Summary_Information.r")
+summary_info$most_common_strategy 
+```
+
+# Table of aggregated data
+
+```{r table, echo=FALSE, message = FALSE}
+```
+
+# Chart 1
+
+```{r chart_one, echo=FALSE, message = FALSE}
+```
+
+# Chart 2
+
+```{r chart_two, echo=FALSE, message = FALSE}
+```
+
+# Chart 3
+
+```{r chart_three, echo=FALSE, message = FALSE}
+```
