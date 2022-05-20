@@ -36,6 +36,7 @@ summary_info$most_common_strategy
 ```
 We were interested in the study that had the largest sample size, and the information on it was that:
 ```{r summary_sample, echo = FALSE, message = FALSE}
+source("Summary_Information.r")
 paste("Year:",summary_info$max_state_sample_size$YearEnd)
 paste("Location:", summary_info$max_state_sample_size$LocationDesc)
 paste("Topic:", summary_info$max_state_sample_size$Topic)
@@ -49,7 +50,12 @@ paste("Sample_Size:",summary_info$max_state_sample_size$Sample_Size)
 
 # Chart 1
 
+This map gives a good visualization of the percentage of adults that are classified as obese in America. 
+One notable observation is that Colorado seems to be absolved of obesity due to how white it is on the legend, but in reality the lowest level of obesity is still close to 24% of the adult population.
+
 ```{r chart_one, echo=FALSE, message = FALSE}
+source("map.R")
+map
 ```
 
 # Chart 2
