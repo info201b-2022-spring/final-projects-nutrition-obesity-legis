@@ -5,12 +5,12 @@ dataset <- read.csv("Nutrition__Physical_Activity__and_Obesity_-_Behavioral_Risk
 
 US_counts_by_year <- dataset %>%
   filter(LocationAbbr == "US") %>%
-  count(YearStart, LocationAbbr)
+  count(ï..YearStart, LocationAbbr)
 
 
-scatterplot <- ggplot(US_counts_by_year, aes(x=YearStart, y=n)) +
-  geom_point(aes(x=YearStart, y=n)) +
-  geom_line(aes(x=YearStart, y=n)) +
+scatterplot <- ggplot(US_counts_by_year, aes(x=ï..YearStart, y=n)) +
+  geom_point(aes(x=ï..YearStart, y=n)) +
+  geom_line(aes(x=ï..YearStart, y=n)) +
   labs(title="Year vs Total Surveys",
        x="Year",
        y="Total Surveys")
