@@ -45,7 +45,11 @@ paste("Sample_Size:",summary_info$max_state_sample_size$Sample_Size)
 ```
 # Table of aggregated data
 
+This table shows the average percentage of US citizens that fall into under the category prompted by the question. This table shows a very broad view of the statistics regarding physical health over the US as a whole.
+
 ```{r table, echo=FALSE, message = FALSE}
+source("table_nutrition_physical.R")
+physical
 ```
 
 # Chart 1
