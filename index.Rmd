@@ -59,7 +59,11 @@ barplot
 
 # Chart 2
 
+This chart shows the amount of surveys done per year regarding health and nutrition. However, these counts are only for studies done for the US as a whole, excluding state specific studies for the count.
+
 ```{r chart_two, echo=FALSE, message = FALSE}
+source("Chart2.R")
+scatterplot
 ```
 
 # Chart 3
