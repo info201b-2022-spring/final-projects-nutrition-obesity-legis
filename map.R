@@ -7,7 +7,7 @@ library(dplyr)
 # (e.g., what it attempts to seeks to express), and what information it reveals.
 # Shows which states have what percentages of obesity in adults over 18
 
-data <- read.csv("/Users/TyTyT/Desktop/final-projects-ttr007/Nutrition__Physical_Activity__and_Obesity_-_Behavioral_Risk_Factor_Surveillance_System.csv")
+data <- read.csv("Nutrition__Physical_Activity__and_Obesity_-_Behavioral_Risk_Factor_Surveillance_System.csv")
 
 # filtering to get the rows of interest
 only_obesity_perc <- data %>%
@@ -19,6 +19,6 @@ only_obesity_perc <- data %>%
   summarize('mean_percentage' = mean(na.omit(Data_Value)))
 
 map <- plot_usmap(data = only_obesity_perc, values = "mean_percentage") + 
-  scale_fill_continuous(low = "white", high = "red", name = "percent of obesity") +
+  scale_fill_continuous(low = "white", high = "red", name = "% obesity") +
   ggtitle("Percentage of Adults 18+ Who Have Obesity Per State")
   
