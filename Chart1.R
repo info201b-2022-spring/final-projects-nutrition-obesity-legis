@@ -11,6 +11,7 @@ races_overweight <- dataset %>%
   summarize(avg_value = mean(Data_Value))
 
 # http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/ used for help with some of the formatting
+# https://stackoverflow.com/questions/35090883/remove-all-of-x-axis-labels-in-ggplot used to figure out how to remove x-axis labels
 barplot <- ggplot(races_overweight, aes(x=Race.Ethnicity, y=avg_value, fill = Race.Ethnicity)) + geom_bar(stat="identity") +
   scale_x_discrete(guide = guide_axis(n.dodge=3))  +
   xlab("Race & Ethnicity") + 
