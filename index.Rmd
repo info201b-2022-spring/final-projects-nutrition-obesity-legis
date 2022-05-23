@@ -50,12 +50,11 @@ paste("Sample_Size:",summary_info$max_state_sample_size$Sample_Size)
 
 # Chart 1
 
-This map gives a good visualization of the percentage of adults that are classified as obese in America. 
-One notable observation is that Colorado seems to be absolved of obesity due to how white it is on the legend, but in reality the lowest level of obesity is still close to 24% of the adult population.
+This bar plot shows the percentage per race and ethnicity group that fall into the overweight classification. The spread of obesity among ethnicities seems to be fairly close, but it is worth mentioning that caucasian does not have its own specific bar.
 
 ```{r chart_one, echo=FALSE, message = FALSE}
-source("map.R")
-map
+source("Chart1.R")
+barplot
 ```
 
 # Chart 2
@@ -65,5 +64,10 @@ map
 
 # Chart 3
 
+This map gives a good visualization of the percentage of adults that are classified as obese in America. 
+One notable observation is that Colorado seems to be absolved of obesity due to how white it is on the legend, but in reality the lowest level of obesity is still close to 24% of the adult population.
+
 ```{r chart_three, echo=FALSE, message = FALSE}
+source("map.R")
+map
 ```
