@@ -21,4 +21,4 @@ only_obesity_perc <- data %>%
 map <- plot_usmap(data = only_obesity_perc, values = "mean_percentage") + 
   scale_fill_continuous(low = "white", high = "red", name = "% obesity") +
   ggtitle("Percentage of Adults 18+ Who Have Obesity Per State")
-  
+
