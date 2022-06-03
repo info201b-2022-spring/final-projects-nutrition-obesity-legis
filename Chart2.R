@@ -4,7 +4,7 @@ library(dplyr)
 dataset <- read.csv("Nutrition__Physical_Activity__and_Obesity_-_Behavioral_Risk_Factor_Surveillance_System.csv")
 
 US_year_question <- dataset %>%
-  filter(LocationAbbr == "US", Education != "") %>%
+  filter(Education != "",LocationAbbr == "US") %>%
   select(ï..YearStart, Education, Data_Value) %>%
   na.omit() %>%
   group_by(Education, ï..YearStart) %>%
@@ -13,7 +13,7 @@ US_year_question <- dataset %>%
 linechart <- ggplot(US_year_question, aes(ï..YearStart, avg_value)) +
   geom_line(aes(color = Education)) +
   labs(title = "Data Values by Education",
-       subtitle = "2020") +
+       subtitle = "2011-2020") +
   theme(
     plot.title = element_text(size = 14, face = "bold"),
     plot.subtitle = element_text(size = 12),
