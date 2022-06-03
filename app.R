@@ -1,6 +1,7 @@
 library(shiny)
 library(ggplot2)
 library(usmap)
+library(dplyr)
 # Define UI ----
 
 data <- read.csv("Nutrition__Physical_Activity__and_Obesity_-_Behavioral_Risk_Factor_Surveillance_System.csv")
@@ -60,7 +61,7 @@ pageThree <-
           )
         ),
         mainPanel(
-          plotOutput(outputId = "map", click = "state_brush")
+          plotOutput(outputId = "map")
           #tableOutput(outputId = "states")
         )
       )
@@ -192,7 +193,10 @@ server <- function(input, output) {
       summarize('mean_percentage' = mean(na.omit(Data_Value)))
     
     plot_usmap(data = only_obesity_perc, values = "mean_percentage") + 
-      scale_fill_continuous(low = "white", high = "red", name = "% obesity")
+      scale_fill_continuous(low = "white", high = "red", name = "% obesity") +
+      ggtitle(input$year) +
+      theme(plot.title = element_text(size = 25, hjust = 0.5, vjust = -5))
+      
   })
   
   #output$states <- renderTable({
