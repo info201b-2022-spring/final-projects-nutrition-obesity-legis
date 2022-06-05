@@ -42,6 +42,7 @@ pageOne <-
     "Health by Group",               
     fluidPage(
       titlePanel("Stratification"),
+      h4("What is the general state of American health related to physical activity/inactivity?"),
       sidebarLayout(
         sidebarPanel(
           radioButtons(
@@ -62,7 +63,8 @@ pageTwo <-
   tabPanel(
     "Methods of Data Collection", 
     fluidPage(
-      
+      titlePanel("Data Collection"),
+      h4("What are the methods of collecting data about health and physical activity?"),
     )
   )
 
@@ -71,6 +73,7 @@ pageThree <-
     "US Map Visual",
     fluidPage(
       titlePanel("Map of % of Adults 18+ Who Have Obesity"),
+      h4("Are there any regional trends for where physical activity, nutrition, and obesity are better or worse?"),
       sidebarLayout(
         sidebarPanel(
           sliderInput(
