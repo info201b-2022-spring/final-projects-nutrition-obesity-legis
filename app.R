@@ -11,9 +11,31 @@ introduction <-
   tabPanel(
     "Introduction",
     fluidPage(
+      titlePanel("Introduction"),
+      "Throughout the COVID-19 pandemic, our local gyms, recreational centers, 
+      and other indoor establishments where we engage in physical activity became
+      a risk to our health. While there were many who adapted by doing their 
+      exercise by themselves, there were also many of us who lost the motivation 
+      and routine to get active, or just felt as if there was a lack of facilities
+      to do so. While our project does not focus solely on physical health during
+      the pandemic, its effects on how we stay healthy piqued our curiosity. Below
+      are our questions that lead our project:",
+
+      h4("What is the general state of American health related to physical activity/inactivity?"),
+      h4("What are the methods of collecting data about health and physical activity?"),
+      h4("Are there any regional trends for where physical activity, nutrition, and obesity are better or worse?"),
+
+      "We will be utilizing a dataset from the CDC about Nutrition, Physical
+      Activity, and Obesity through their Behavioral Risk Factor Surveillance
+      System. The dataset addresses topics such as diets, physical activity,
+      weight, and more, and can be found at this link:",
       
+      h4(tags$a(href="https://chronicdata.cdc.gov/Nutrition-Physical-Activity-and-Obesity/Nutrition-Physical-Activity-and-Obesity-Behavioral/hn4x-zwk7",
+                "Nutrition, Physical Activity, and Obesity - Behavioral Risk Factor Surveillance System")),
+      
+      "A Shiny App Project by Nghi Huynh, Tyler Tran, Luke VanHouten, and Ayman Yousuf"
+      )
     )
-  )
 
 pageOne <-                   
   tabPanel(                 
@@ -38,7 +60,7 @@ pageOne <-
 
 pageTwo <- 
   tabPanel(
-    "Page two", 
+    "Methods of Data Collection", 
     fluidPage(
       
     )
@@ -72,7 +94,32 @@ summary <-
   tabPanel(
     "Summary",
     fluidPage(
-      
+      titlePanel("Summary"),
+      h3("Takeaway 1"),
+      "These takeaways are about the demographics of the study, which can be found
+      on the Health by Group page of the app. It appears as if obesity is rather 
+      constant between races and ethnicities, with white and Hispanic people being
+      slightly more obese than the rest of the population. Obesity is negatively
+      correlated with education, and the trend has been moving upwards in recent
+      years, meaning that those who are least educated are more likely to have
+      problems with their weight. Surprisingly, the data showed that obesity
+      increases with income. This may be due to greater access to food. And lastly,
+      the data shows that obesity increases with age. This makes sense, as most
+      people are born at a healthy weight.",
+      h3("Takeaway 2"),
+      "These takeaways are about the methods of data collection for our dataset,
+      utilizing the Behavioral Risk Factor Surveillance System. The chart for this 
+      can be found on the Methods of Data Collection page of the app. The first 
+      takeaway is that...",
+      h3("Takeaway 3"),
+      "These takeaways are about the regions with the most obesity throughout the
+      2010s, and can be found on the US Map Visual page of the app. The map chart
+      shows that obesity has been consistently increasing from the low 30%s to
+      around 40% over the course of the decade, with the largest increases seen
+      in rural states such as those in the south. In the middle of the decade,
+      the largest gaps could be seen between the states with the highest and lowest
+      obesity rates, reaching almost 15% increases between states like California
+      and Alabama. The only state with missing data is Colorado."
     )
   )
 
@@ -119,7 +166,7 @@ server <- function(input, output) {
               axis.ticks.x=element_blank(),
               plot.title = element_text(size = 14, face = "bold"))
     } else if(input$category == "education") { # EDUCATION RADIO BUTTON OPTION
-      US_year_question <- dataset %>%
+      US_year_question <- data %>%
         filter(Education != "",LocationAbbr == "US") %>%
         select(ï..YearStart, Education, Data_Value) %>%
         na.omit() %>%
@@ -139,7 +186,7 @@ server <- function(input, output) {
         scale_x_continuous(breaks = seq(2011, 2020)) +
         theme(axis.text.x = element_text(angle = 90, hjust = 1))
     } else if (input$category == "income") {
-      income <- dataset %>% 
+      income <- data %>% 
         filter(Question == "Percent of adults aged 18 years and older who have an overweight classification", Income != "", ï..YearStart == 2020) %>%
         select(Data_Value, Income) %>%
         na.omit(Income) %>%
@@ -159,7 +206,7 @@ server <- function(input, output) {
               axis.ticks.x=element_blank(),
               plot.title = element_text(size = 14, face = "bold"))
     } else {
-      age <- dataset %>% 
+      age <- data %>% 
         filter(Question == "Percent of adults aged 18 years and older who have an overweight classification", Age.years. != "", ï..YearStart == 2020) %>%
         select(Data_Value, Age.years.) %>%
         na.omit(Age.years.) %>%
