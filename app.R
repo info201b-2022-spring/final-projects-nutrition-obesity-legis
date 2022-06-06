@@ -23,7 +23,7 @@ introduction <-
       are our questions that lead our project:",
 
       h4("What is the general state of American health related to physical activity/inactivity?"),
-      h4("What are the methods of collecting data about health and physical activity?"),
+      h4("What specific questions measure data about health and physical activity?"),
       h4("Are there any regional trends for where physical activity, nutrition, and obesity are better or worse?"),
 
       "We will be utilizing a dataset from the CDC about Nutrition, Physical
