@@ -21,20 +21,23 @@ introduction <-
       to do so. While our project does not focus solely on physical health during
       the pandemic, its effects on how we stay healthy piqued our curiosity. Below
       are our questions that lead our project:",
-
+      br(),
+      br(),
       h4("What is the general state of American health related to physical activity/inactivity?"),
       h4("What specific questions measure data about health and physical activity?"),
       h4("Are there any regional trends for where physical activity, nutrition, and obesity are better or worse?"),
-
+      br(),
       "We will be utilizing a dataset from the CDC about Nutrition, Physical
       Activity, and Obesity through their Behavioral Risk Factor Surveillance
       System. The dataset addresses topics such as diets, physical activity,
       weight, and more, and can be found at this link:",
-      
+      br(),
       h4(tags$a(href="https://chronicdata.cdc.gov/Nutrition-Physical-Activity-and-Obesity/Nutrition-Physical-Activity-and-Obesity-Behavioral/hn4x-zwk7",
                 "Nutrition, Physical Activity, and Obesity - Behavioral Risk Factor Surveillance System")),
-      
-      "A Shiny App Project by Nghi Huynh, Tyler Tran, Luke VanHouten, and Ayman Yousuf"
+      br(),
+      "A Shiny App Project by Nghi Huynh, Tyler Tran, Luke VanHouten, and Ayman Yousuf",
+      mainPanel(br(),
+        tags$img(src="image14.png", height="256px", width="522px", deleteFile=FALSE))
       )
     )
 
