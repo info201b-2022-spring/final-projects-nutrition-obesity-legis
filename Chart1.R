@@ -4,7 +4,7 @@ library(dplyr)
 dataset <- read.csv("Nutrition__Physical_Activity__and_Obesity_-_Behavioral_Risk_Factor_Surveillance_System.csv")
 
 races_overweight <- dataset %>% 
-  filter(Question == "Percent of adults aged 18 years and older who have an overweight classification", Race.Ethnicity != "") %>%
+  filter(Question == "Percent of adults aged 18 years and older who have an overweight classification", Race.Ethnicity != "", ï..YearStart == 2020) %>%
   select(Data_Value, Race.Ethnicity) %>%
   na.omit(Race.Ethnicity) %>%
   group_by(Race.Ethnicity) %>%
@@ -12,7 +12,7 @@ races_overweight <- dataset %>%
 
 # http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/ used for help with some of the formatting
 # https://stackoverflow.com/questions/35090883/remove-all-of-x-axis-labels-in-ggplot used to figure out how to remove x-axis labels
-barplot <- ggplot(races_overweight, aes(x=Race.Ethnicity, y=avg_value, fill = Race.Ethnicity)) + geom_bar(stat="identity") +
+race_plot <- ggplot(races_overweight, aes(x=Race.Ethnicity, y=avg_value, fill = Race.Ethnicity)) + geom_bar(stat="identity") +
   scale_x_discrete(guide = guide_axis(n.dodge=3))  +
   xlab("Race & Ethnicity") + 
   ylab("Average % Overweight Classification") +
