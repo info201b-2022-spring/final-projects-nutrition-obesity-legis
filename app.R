@@ -6,7 +6,7 @@ library(stringr)
 # Define UI ----
 
 data <- read.csv("Nutrition__Physical_Activity__and_Obesity_-_Behavioral_Risk_Factor_Surveillance_System.csv")
-
+colnames(data)[1] <- "YearStart"
 
 introduction <-
   tabPanel(
@@ -185,12 +185,12 @@ server <- function(input, output) {
     } else if(input$category == "education") { # EDUCATION RADIO BUTTON OPTION
       US_year_question <- data %>%
         filter(Education != "",LocationAbbr == "US") %>%
-        select(ï..YearStart, Education, Data_Value) %>%
+        select(YearStart, Education, Data_Value) %>%
         na.omit() %>%
-        group_by(Education, ï..YearStart) %>%
+        group_by(Education, YearStart) %>%
         summarise(avg_value = mean(Data_Value))
       
-      ggplot(US_year_question, aes(ï..YearStart, avg_value)) +
+      ggplot(US_year_question, aes(YearStart, avg_value)) +
         geom_line(aes(color = Education)) +
         labs(title = "Data Values by Education",
              subtitle = "2011-2020") +
@@ -204,7 +204,7 @@ server <- function(input, output) {
         theme(axis.text.x = element_text(angle = 90, hjust = 1))
     } else if (input$category == "income") {
       income <- data %>% 
-        filter(Question == "Percent of adults aged 18 years and older who have an overweight classification", Income != "", ï..YearStart == 2020) %>%
+        filter(Question == "Percent of adults aged 18 years and older who have an overweight classification", Income != "", YearStart == 2020) %>%
         select(Data_Value, Income) %>%
         na.omit(Income) %>%
         group_by(Income) %>%
@@ -224,7 +224,7 @@ server <- function(input, output) {
               plot.title = element_text(size = 14, face = "bold"))
     } else {
       age <- data %>% 
-        filter(Question == "Percent of adults aged 18 years and older who have an overweight classification", Age.years. != "", ï..YearStart == 2020) %>%
+        filter(Question == "Percent of adults aged 18 years and older who have an overweight classification", Age.years. != "", YearStart == 2020) %>%
         select(Data_Value, Age.years.) %>%
         na.omit(Age.years.) %>%
         group_by(Age.years.) %>%
@@ -249,7 +249,7 @@ server <- function(input, output) {
   # START OF PAGE 2 (LOLLIPOP)
   question_df <- data %>%
     group_by(Question) %>%
-    filter(ï..YearStart == 2019) %>%
+    filter(YearStart == 2019) %>%
     summarize(Average.Percentage = round(mean(na.omit(Data_Value)), digits = 2))
   
   output$lollipop <- renderPlot({
