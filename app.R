@@ -2,6 +2,7 @@ library(shiny)
 library(ggplot2)
 library(usmap)
 library(dplyr)
+library(stringr)
 # Define UI ----
 
 data <- read.csv("Nutrition__Physical_Activity__and_Obesity_-_Behavioral_Risk_Factor_Surveillance_System.csv")
@@ -61,10 +62,13 @@ pageOne <-
 
 pageTwo <- 
   tabPanel(
-    "Methods of Data Collection", 
+    "Data Collection", 
     fluidPage(
       titlePanel("Data Collection"),
-      h4("What are the methods of collecting data about health and physical activity?"),
+      h4("What specific questions measure data about health and physical activity?"),
+      plotOutput(outputId = "lollipop", click = "question_click"),
+      p("Click on the dots to see the individual questions!"),
+      tableOutput(outputId = "question")
     )
   )
 
@@ -110,10 +114,17 @@ summary <-
       the data shows that obesity increases with age. This makes sense, as most
       people are born at a healthy weight.",
       h3("Takeaway 2"),
-      "These takeaways are about the methods of data collection for our dataset,
+      "These takeaways are about the questions used for data collection for our dataset,
       utilizing the Behavioral Risk Factor Surveillance System. The chart for this 
-      can be found on the Methods of Data Collection page of the app. The first 
-      takeaway is that...",
+      can be found on the Data Collection page of the app. The first 
+      takeaway is that health issues have a pretty clear correlatoin to nutrition.
+      41% of adults eat fruit less than daily, and 22% of adults eat vegetables less
+      than daily. That means a lot of adults are experiencing imbalanced diets and not
+      getting enough of the 5 food groups. Going off of this, another takeaway is that
+      physical activity is not the sole contributor. While 28% of adults don't engage in
+      leisure-time physical activity, that is less than the % of adults that qualify as obese
+      or overweight. The questions help us understand more specifics about the health issues
+      in America since we can see trends on nutrition and physical activity.",
       h3("Takeaway 3"),
       "These takeaways are about the regions with the most obesity throughout the
       2010s, and can be found on the US Map Visual page of the app. The map chart
@@ -231,6 +242,35 @@ server <- function(input, output) {
     }
   })
   
+  
+  # START OF PAGE 2 (LOLLIPOP)
+  question_df <- data %>%
+    group_by(Question) %>%
+    filter(ï..YearStart == 2019) %>%
+    summarize(Average.Percentage = round(mean(na.omit(Data_Value)), digits = 2))
+  
+  output$lollipop <- renderPlot({
+    ggplot(question_df, aes(x=Question, y=Average.Percentage)) +
+      geom_segment( aes(x=Question, xend=Question, y=0, yend=Average.Percentage), color="grey") +
+      geom_point( color="orange", size=4) +
+      theme_light() +
+      theme(
+        panel.grid.major.x = element_blank(),
+        panel.border = element_blank(),
+        axis.ticks.x = element_blank()
+      ) +
+      ylab("% of people that classify") +
+      theme(axis.title.x=element_blank(),
+            axis.text.x=element_blank(),
+            axis.ticks.x=element_blank()) +
+      labs(title = str_wrap("2019 Behavioral Risk Factor Surveillance System Data", 60), subtitle = "Most Recent Year With Data For All Questions") +
+      theme(plot.title = element_text(hjust = 0.5),
+            plot.subtitle = element_text(hjust = 0.5))
+  })
+  
+  output$question <- renderTable({
+    nearPoints(question_df, input$question_click, xvar = "Question", yvar = "Average.Percentage")
+  })
   
   # START OF PAGE 3 (MAP)
   output$map <- renderPlot({
